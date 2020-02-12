@@ -1,0 +1,119 @@
+# Categories:
+ct_ANY_category = {
+	ANY_statehood = {
+		icon = generic_form_nation
+		available = {	political_power_daily > 0.09	}
+		visible = {
+			OR = {
+				is_subject = no
+				is_ai = no
+			}
+			NOT = { original_tag = ENG }
+			any_owned_state = {
+				NOT = { is_core_of = ROOT }    
+				is_in_home_area = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		days_re_enable = 7
+		days_remove = 150
+		cost = 50
+		highlight_states = { state = PREV }
+		modifier = { political_power_gain = -0.1	}
+		remove_effect = {
+			random_owned_state = {
+				limit = {  
+					NOT = {	is_core_of = ROOT }  
+					is_in_home_area = yes
+				}
+				add_core_of = ROOT
+			}	
+		}
+	}
+	ENG_statehood = {
+		icon = generic_form_nation
+		available = {	political_power_daily > 0.09	}
+		visible = {
+			OR = {
+				is_subject = no
+				is_ai = no
+			}
+			original_tag = ENG
+			any_owned_state = {
+				NOT = { is_core_of = ROOT }    
+				is_on_continent = europe
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		days_re_enable = 7
+		days_remove = 150
+		cost = 50
+		highlight_states = { state = PREV }
+		modifier = { political_power_gain = -0.1	}
+		remove_effect = {
+			random_owned_state = {
+				limit = {  
+					NOT = {	is_core_of = ROOT }  
+					is_on_continent = europe
+				}
+				add_core_of = ROOT
+			}	
+		}
+	}
+	ANY_statehood_colony = {
+		icon = generic_form_nation
+		available = {
+			political_power_daily > 0.5
+		} 
+		visible = {
+			OR = {
+				is_subject = no
+				is_ai = no
+			} 
+			any_owned_state = {
+				NOT = { 
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}    
+
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		days_re_enable = 7
+		days_remove = 365
+		cost = 500
+		highlight_states = { state = PREV }
+		modifier = {
+			political_power_gain = -0.5
+		}
+		remove_effect = {
+			random_owned_state = {
+				limit = {  
+					NOT = {	
+						is_core_of = ROOT 
+						is_in_home_area = yes				
+					}  
+				}
+				add_core_of = ROOT
+			}	
+		}
+	}	
+}
