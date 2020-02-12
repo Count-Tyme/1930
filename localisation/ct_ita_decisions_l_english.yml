@@ -1,0 +1,23 @@
+﻿l_english:
+ #Categories
+ ITA_colonial_investment_category:0 "Colonial Investment"
+ ITA_prospect_for_resources_category:0 "Prospect for Resources"
+ ITA_industrial_development_category:0 "Industrial Development"
+  
+ #Italian decisions
+ ITA_industrialization_process_in_Libya_phase_I:0 "Industralization in Libya phase I"
+ ITA_industrialization_process_in_Libya_phase_I_desc:0 "Expand the industrial capacity in Tripoli."
+ ITA_industrialization_process_in_Libya_phase_II:0 "Industralization in Libya phase II"
+ ITA_industrialization_process_in_Libya_phase_II_desc:0 "Expand the industrial capacity in Benghasi."
+ ITA_industrial_center_of_Italian_East_Africa:0 "Industrial center of Italian East Africa"
+ ITA_industrial_center_of_Italian_East_Africa_desc:0 "With industrial investment, we transform the colony into the industrial center of the region, which can serve as a basis for further expansion."
+ ITA_develop_italian_somaliland:0 "Develop Italian Somaliland"
+ ITA_develop_italian_somaliland_desc:0 "Expand the agricultural industries in Italian Somaliland."
+ ITA_tripoli_oil_surveys:0 "Tripoli oil survey"
+ ITA_tripoli_oil_surveys_desc:0 "Signs of oil fields have been found in Tripoli. We have to conduct a through survey and chart any unexploited oil reserves in these areas."
+ ITA_expand_the_crda_trieste_shipyard:0 "Expand the CRDA Trieste shipyards"
+ ITA_expand_the_crda_trieste_shipyard_desc:0 "The old KUK. shipyards the CRDA Trieste has been modernized and expanded to increase ship building capacity."
+ ITA_crda_trieste_steel_works:0 "CRDA Trieste steel works"
+ ITA_crda_trieste_steel_works_desc:0 "With the modernization of the old KUK. steel plant, it is possible to increase industrial production."
+ ITA_autarky:0 "Autarky"
+ ITA_autarky_desc:0 "Italy can't afford to be dependent on foreign countries for most of her oil imports, and the best way we can prevent that, is by developing a healthy backup, and making an effort to produce our own fuel."
