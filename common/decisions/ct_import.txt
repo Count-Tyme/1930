@@ -1,0 +1,194 @@
+#####################################################################
+GER_dec_ROM = {
+	take_control_over_romanian_oil_fields = {
+
+		icon = oil
+		cost = 20
+
+		available = {
+			#has_completed_focus = GER_ROM_oil
+			46 = { has_state_flag = invest_in_Mirafor_flag }
+			81 = { has_state_flag = invest_in_Consortiul_Petrolui_flag }
+			83 = { has_state_flag = invest_in_Buna_Speranta_flag }
+			date > 1940.6.1
+			AND = {
+				ROM = { has_government = fascism }
+				is_in_faction_with = ROM
+			}
+		}
+
+		fire_only_once = yes
+		#activation = {		
+		#	has_completed_focus = GER_ROM_oil
+		#}
+
+		visible = {
+			#has_completed_focus = GER_ROM_oil
+		}
+		complete_effect = {
+			ROM = {
+				add_ideas = ger_control_rom
+				add_ideas = free_trade
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.1009 }
+			}
+		}
+	}
+	invest_in_Mirafor = {
+		
+		icon = generic_construction
+
+		allowed = {
+			
+		}
+		highlight_states = {
+			state = 46
+		}
+		available = {
+			#has_completed_focus = GER_ROM_oil
+			num_of_civilian_factories_available_for_projects > 1
+			ROM = { owns_state = 46 }
+			ROM = { controls_state = 46 }
+		}
+
+		visible = {
+			#has_completed_focus = GER_ROM_oil
+			ROM = { owns_state = 46 }
+			ROM = { controls_state = 46 }
+			46 = {
+				NOT = {
+					has_state_flag = invest_in_Mirafor_flag
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			46 = { set_state_flag = invest_in_Mirafor_flag } 
+			46 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}	
+	}
+	invest_in_Consortiul_Petrolui = {
+		
+		icon = generic_construction
+
+		allowed = {
+			
+		}
+		highlight_states = {
+			state = 81
+		}
+		available = {
+			#has_completed_focus = GER_ROM_oil
+			num_of_civilian_factories_available_for_projects > 1
+			ROM = { owns_state = 81 }
+			ROM = { controls_state = 81 }
+		}
+
+		visible = {
+			#has_completed_focus = GER_ROM_oil
+			ROM = { owns_state = 81 }
+			ROM = { controls_state = 81 }
+			81 = {
+				NOT = {
+					has_state_flag = invest_in_Consortiul_Petrolui_flag
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = {
+			81 = { set_state_flag = invest_in_Consortiul_Petrolui_flag } 
+			81 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}	
+	}
+	invest_in_Buna_Speranta = {
+		
+		icon = generic_construction
+
+		allowed = {
+			
+		}
+		highlight_states = {
+			state = 83
+		}
+		available = {
+			#has_completed_focus = GER_ROM_oil
+			num_of_civilian_factories_available_for_projects > 1
+			ROM = { owns_state = 83 }
+			ROM = { controls_state = 83 }
+		}
+
+		visible = {
+			#has_completed_focus = GER_ROM_oil
+			ROM = { owns_state = 83 }
+			ROM = { controls_state = 83 }
+			83 = {
+				NOT = {
+					has_state_flag = invest_in_Buna_Speranta_flag
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 45
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = {
+			83 = { set_state_flag = invest_in_Buna_Speranta_flag } 
+			83 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}	
+	}
+}

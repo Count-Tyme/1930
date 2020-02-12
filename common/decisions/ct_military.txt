@@ -1,0 +1,48 @@
+# Categories:
+ct_military_category = {
+	joint_service_maneuvers = { 
+		icon = decision_generic_prepare_civil_war
+		available = {
+				command_power > 99
+		}
+		visible = {
+			has_war = no
+			is_subject = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		fire_only_once = no
+		cost = 10
+		days_re_enable = 100
+		complete_effect = {
+			army_experience = 2
+			navy_experience = 2
+			air_experience = 2
+		}
+		complete_effect = {
+			add_command_power = -100
+		}
+	}
+	
+	war_support_speech = { 
+		icon = decision_generic_prepare_civil_war
+		available = {
+			has_war_support < 0.95
+		}
+		visible = {
+			is_ai = no
+			is_subject = no
+		} 
+		ai_will_do = {
+			factor = 0
+		} 
+		fire_only_once = no
+		cost = 25
+		days_re_enable = 180
+		complete_effect = {
+			add_war_support = 0.05
+			add_manpower = 250
+		}
+	}	
+}
