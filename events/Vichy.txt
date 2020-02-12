@@ -1,0 +1,115 @@
+﻿add_namespace = vichy
+
+# Japan demands Indochina
+country_event = {
+	id = vichy.1
+	title = france.1.t
+	desc = france.1.d
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = { # Accept demands
+		name = france.1.a
+		ai_chance = {
+			factor = 90
+		} 
+		JAP = {
+			country_event = { days = 5 id = japan.6 }
+		}
+	}
+}
+country_event = {
+	id = vichy.2
+	title = vichy.2.t
+	desc = vichy.2.d
+	picture = GFX_news_event_petain_hitler
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				tag = VFR
+				VFR = { has_war_with = USA }
+			}
+			AND = {
+				tag = VFR
+				64 = { is_controlled_by = GER }
+				26 = { is_controlled_by = VFR }
+				14 = { is_controlled_by = FRA }
+				15 = { is_controlled_by = FRA }
+				16 = { is_controlled_by = FRA }
+			}
+		}
+	}
+	immediate = {
+		remove_ideas = VFR_neutrality
+		GER = { puppet = VFR }
+	}
+	option = {
+		name = vichy.2.a
+		GER = {
+			country_event = { days = 1 id = vichy.3 }
+		}
+		ENG = {
+			country_event = { days = 2 id = vichy.4 }
+		}
+		735 = {
+			if = {
+				limit = { is_controlled_by = ITA }
+				32 = {
+					if = {
+						limit = { is_controlled_by = VFR }
+						ITA = { transfer_state = 32 }
+					}
+				}
+				21 = {
+					if = {
+						limit = { is_controlled_by = VFR }
+						ITA = { transfer_state = 21 }
+					}
+				}
+				1 = {
+					if = {
+						limit = { is_controlled_by = VFR }
+						ITA = { transfer_state = 1 }
+					}
+				}
+				458 = {
+					if = {
+						limit = { is_controlled_by = VFR }
+						ITA = { transfer_state = 458 }
+					}
+				}
+				665 = {
+					if = {
+						limit = { is_controlled_by = VFR }
+						ITA = { transfer_state = 665 }
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = vichy.3
+	title = vichy.3.t
+	desc = vichy.3.d
+	picture = GFX_news_event_petain_hitler
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = vichy.3.a
+	}
+}
+country_event = {
+	id = vichy.4
+	title = vichy.4.t
+	desc = vichy.4.d
+	picture = GFX_news_event_petain_hitler
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = vichy.4.a
+	}
+}

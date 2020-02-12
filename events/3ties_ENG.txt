@@ -1,0 +1,990 @@
+﻿add_namespace = cteng
+
+country_event = { #Stanley Baldwin 1935
+	id = cteng.1
+	title = cteng.1.t
+	desc = cteng.1.d
+	picture = GFX_report_event_election_vote
+	is_triggered_only = yes
+	option = { #conservatives only
+		name = cteng.1.o1
+		ai_chance = {
+			factor = 95
+		}
+		set_country_flag = ct_eng_baldwin
+		create_country_leader = {
+			name = "Stanley Baldwin"
+			desc = "POLITICS_STANLEY_BALDWIN_DESC"
+			picture = "gfx//leaders//ENG//Portrait_Britain_Stanley_Baldwin.dds"
+			expire = "1938.1.1"
+			ideology = liberalism
+			traits = {	
+			}
+		}
+	}
+	option = { #national government
+		name = cteng.1.o2
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = ct_eng_macdonald
+		create_country_leader = {
+			name = "Ramsay MacDonald"
+			desc = "POLITICS_RAMSAY_MACDONALD_DESC"
+			picture = "Portrait_ENG_Ramsay_McDonald.dds"
+			expire = "1938.1.1"
+			ideology = socialism
+			traits = {	
+			}
+		}
+	}
+}
+
+country_event = { #Unemployement and Banking Crisis
+	id = cteng.2
+	title = cteng.2.t
+	desc = cteng.2.d
+	picture = GFX_report_event_crowd_in_prague
+	fire_only_once = yes		
+	trigger = {
+		tag = ENG
+		has_war = no
+		NOT = { has_completed_focus = ENG_accept_provisional_prime_minister }
+		AND = {
+			date > 1931.6.13
+			date < 1931.8.13			
+			NOT = { has_country_flag = ct_eng_bank_crisis }
+		}
+	}
+	mean_time_to_happen = { days = 5 }
+	option = {
+		name = cteng.2.o1
+		ai_chance = {
+			factor = 75
+		}
+		set_country_flag = ct_eng_bank_crisis
+		add_stability = -0.10
+		130 = {
+			remove_building = {
+			    type = industrial_complex
+			    level = 2
+			}
+		}
+		131 = {
+			remove_building = {
+			    type = industrial_complex
+			    level = 1
+			}
+		}
+
+	}
+	option = {
+		name = cteng.2.o2
+		ai_chance = {
+			factor = 25
+		}
+		set_country_flag = ct_eng_bank_crisis
+		add_stability = -0.20
+		130 = {
+			remove_building = {
+			    type = industrial_complex
+			    level = 1
+			}
+		}
+
+	}
+}
+country_event = { #Unemployement Riot
+	id = cteng.3
+	title = cteng.3.t
+	desc = cteng.3.d
+	picture = GFX_report_event_crowd_in_prague
+	fire_only_once = yes		
+	trigger = {
+		NOT = { has_completed_focus = ENG_accept_provisional_prime_minister }
+		OR = {
+			has_idea = great_depression
+			has_idea = great_depression_2
+			has_idea = great_depression_3
+			has_idea = great_depression_lopp
+			has_idea = super_great_depression
+		}
+		tag = ENG
+		AND = {
+			date > 1932.7.10
+			NOT = { has_country_flag = ct_eng_hunger }
+		}
+	}
+	mean_time_to_happen = { days = 26 }
+	option = {    #send troops
+		name = cteng.3.o1
+		trigger = { NOT = { has_completed_focus = ENG_a_change_in_course } }
+		set_country_flag = ct_eng_hunger
+		add_stability = -0.10
+		add_political_power = -100
+	}
+	option = {   #troops & mosely capitalizes
+		name = cteng.3.o2
+		set_country_flag = ct_eng_hunger
+		trigger = { has_completed_focus = ENG_a_change_in_course }
+		#ai_chance = { 
+		#	factor = 1
+		#	modifier = {
+		#		factor = 1000 
+		#		has_completed_focus = ENG_a_change_in_course
+		#	}
+		#}
+		add_stability = -0.10
+		add_political_power = -100
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.08
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+		}
+	}
+}
+
+country_event = { #Spanish offer join Allies & war 4 Gibraltar
+	id = cteng.4
+	title = cteng.4.t
+	desc = cteng.4.d
+	picture = GFX_report_event_crowd_in_prague
+	is_triggered_only = yes
+	#deal
+	option = {
+		name = cteng.4.o1
+		ai_chance = {
+			factor = 50
+		}
+		add_to_faction = SPR
+		SPR = {
+			add_state_claim = 118
+			add_state_claim = 461
+			add_state_claim = 462
+			transfer_state = 118
+			transfer_state = 461
+			transfer_state = 462
+		}
+	}
+	option = {
+		name = cteng.4.o2
+		ai_chance = { 
+			factor = 0
+		}
+		add_political_power = -50
+	}
+}
+
+country_event = {  #Is This Our Finest Hour?
+   	id = cteng.5
+    	title = cteng.5.t
+    	desc = cteng.5.d
+    	picture = GFX_fin_hou
+    	fire_only_once = yes
+    	trigger = {
+			original_tag = ENG
+			has_government = democratic
+			OR = {
+				country_exists = VFR
+				16 = { NOT = { is_controlled_by = FRA } }
+			}
+    	}
+    	mean_time_to_happen = {
+        		days = 7
+    	}
+    	option = {
+        		name = cteng.5.o1
+        		ENG = { add_timed_idea = { idea = ENG_fin_hou days = 200 } }
+    	}
+	option = {
+        		name = cteng.5.o2
+       	 	ENG = { add_timed_idea = { idea = GEN_fin_hou days = 200 } }
+		CAN = { add_timed_idea = { idea = GEN_fin_hou days = 200 } }
+		AST = { add_timed_idea = { idea = GEN_fin_hou days = 200 } }
+		NZL = { add_timed_idea = { idea = GEN_fin_hou days = 200 } }
+		SAF = { add_timed_idea = { idea = GEN_fin_hou days = 200 } }
+		RAJ = { add_timed_idea = { idea = GEN_fin_hou days = 200 } }
+    	}	
+}
+
+country_event = { #Independence For Iraq
+	id = cteng.6
+	title = cteng.6.t
+	desc = cteng.6.d
+	picture = GFX_report_event_iraq_oil
+	fire_only_once = yes		
+	trigger = {
+		NOT = { has_completed_focus = ENG_accept_provisional_prime_minister }
+		tag = ENG
+		AND = {
+			date > 1932.10.1
+			date < 1932.12.30
+		}
+	}
+	option = { #grant ind as puppet
+		name = cteng.6.o1
+		ai_chance = { factor = 100 }
+		release_puppet = IRQ
+		add_autonomy_ratio = {
+			value = 0.5
+		}
+	}
+	option = { #deny ind provoke rebel
+		name = cteng.6.o2
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			country_event = { id = cteng.7 days = 4 }
+		}
+		custom_effect_tooltip = irq_independent
+	}
+}
+
+country_event = {  #Iraq Rebels
+	id = cteng.7
+	title = cteng.7.t
+	desc = cteng.7.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = { 
+		name = cteng.7.o1
+		hidden_effect = {
+			release = IRQ
+			IRQ = {
+				declare_war_on = {
+    					target = ENG
+    					type = take_core_state
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+				load_oob = "IRQ_1930"
+			}
+			news_event = { hours = 8 id = news_1930.28 }
+		}
+	}
+}
+
+country_event = { #EGY Anglo-Egyptian Treaty 36
+	id = cteng.8
+	title = cteng.8.t
+	desc = cteng.8.d
+	picture = GFX_report_event_iraq_oil
+	fire_only_once = yes		
+	trigger = {
+		NOT = { has_completed_focus = ENG_accept_provisional_prime_minister }
+		tag = ENG
+		AND = {
+			date > 1936.8.1
+			date < 1936.12.30
+		}
+	}
+	option = { #grant ind as puppet
+		name = cteng.8.o1
+		ai_chance = { factor = 100 }
+		release_puppet = EGY
+		EGY = {
+			add_autonomy_ratio = {
+				value = 0.5
+			}
+			set_politics = {
+				ruling_party = neutrality
+				last_election = "1936.1.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 25
+				fascism = 20
+				communism = 5
+				neutrality = 50
+			}
+		}
+	}
+	option = { #deny ind provoke rebel
+		name = cteng.8.o2
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			country_event = { id = cteng.9 days = 24 }
+		}
+		custom_effect_tooltip = egy_independent
+	}
+}
+
+country_event = {  #egypt rebels 
+	id = cteng.9
+	title = cteng.9.t
+	desc = cteng.9.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = { 
+		name = cteng.9.o1
+		hidden_effect = {
+			release = EGY
+			EGY = {
+				set_politics = {
+					ruling_party = neutrality
+					last_election = "1936.1.1"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 25
+					fascism = 20
+					communism = 5
+					neutrality = 50
+				}
+				declare_war_on = {
+    					target = ENG
+    					type = take_core_state
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+				load_oob = "EGY_1930"
+			}
+			news_event = { hours = 12 id = news_1930.29 }
+		}
+	}
+}
+
+country_event = {	#1 mil unemployment 
+	id = cteng.10
+	title = cteng.10.t
+	desc = cteng.10.d
+	picture = GFX_report_event_crowd_in_prague
+	fire_only_once = yes		
+	trigger = {
+		NOT = { has_completed_focus = ENG_accept_provisional_prime_minister }
+		OR = {
+			has_idea = great_depression
+			has_idea = great_depression_2
+			has_idea = great_depression_3
+			has_idea = great_depression_lopp
+			has_idea = super_great_depression
+		}
+		tag = ENG
+		has_war = no
+		AND = {
+			date > 1930.1.13
+			date < 1930.2.13			
+			NOT = { has_country_flag = ct_eng_bank_crisis2 }
+		}
+	} 
+	mean_time_to_happen = { days = 5 }
+	option = {
+		name = cteng.10.o1
+		trigger = { NOT = { has_completed_focus = ENG_a_change_in_course } }
+		set_country_flag = ct_eng_bank_crisis2
+		add_stability = -0.05
+		119 = {
+			remove_building = {
+			    type = industrial_complex
+			    level = 1
+			}
+		}
+	}
+	option = {   #fascism
+	name = cteng.10.o2
+	set_country_flag = ct_eng_hunger
+	trigger = { has_completed_focus = ENG_a_change_in_course }
+	set_country_flag = ct_eng_bank_crisis2
+	add_stability = -0.05
+	119 = {
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+	}
+	add_popularity = {
+		ideology = fascism
+		popularity = 0.02
+	}
+	if = {
+		limit = {
+			is_ai = yes
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.01
+		}
+	}
+}
+}
+
+country_event = {	#2.5 mil unemployment 
+	id = cteng.11
+	title = cteng.11.t
+	desc = cteng.11.d
+	picture = GFX_fra_com
+	fire_only_once = yes		
+	trigger = {
+		NOT = { has_completed_focus = ENG_accept_provisional_prime_minister }
+		OR = {
+			has_idea = great_depression
+			has_idea = great_depression_2
+			has_idea = great_depression_3
+			has_idea = great_depression_lopp
+			has_idea = super_great_depression
+		}
+		tag = ENG
+		has_war = no
+		AND = {
+			date > 1930.11.28
+			date < 1930.12.28			
+			NOT = { has_country_flag = ct_eng_bank_crisis3 }
+		}
+	} 
+	mean_time_to_happen = { days = 5 }
+	option = {
+		name = cteng.11.o1
+		trigger = { NOT = { has_completed_focus = ENG_a_change_in_course } }
+		set_country_flag = ct_eng_bank_crisis3
+		add_stability = -0.10
+		331 = {
+			remove_building = {
+			    type = industrial_complex
+			    level = 1
+			}
+		}
+	}
+	option = {
+		name = cteng.11.o2
+		trigger = { has_completed_focus = ENG_a_change_in_course }
+		set_country_flag = ct_eng_bank_crisis3
+		add_stability = -0.10
+		331 = {
+			remove_building = {
+			    type = industrial_complex
+			    level = 1
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.02
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			ROOT = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.01
+				}				
+			}
+		}
+	}
+}
+
+country_event = {	#battle 4 cable street
+	id = cteng.12
+	title = cteng.12.t
+	desc = cteng.12.d
+	picture = GFX_report_event_fascist_militia
+	is_triggered_only = yes
+	option = { #keep going
+		name = cteng.12.o1
+		ai_chance = { factor = 30 }
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.02
+		}	
+		add_political_power = -20
+	}
+	option = { #turn back
+		name = cteng.12.o2
+		ai_chance = { factor = 70 }
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.01
+		}	
+	}
+}
+
+country_event = {	#mosely pm
+	id = cteng.13
+	title = cteng.13.t
+	desc = cteng.13.d
+	picture = GFX_report_event_buf
+	is_triggered_only = yes
+	option = { 
+		name = cteng.13.o1
+		set_country_flag = ct_mosley	
+		create_country_leader = {
+			name = "Oswald Mosley"
+			desc = "POLITICS_OSWALD_MOSLEY_DESC"
+			picture = "Portrait_Britain_Oswald_Mosley.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				champion_of_peace_1
+				economic_reformer
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.20
+		}
+		hidden_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+			}	
+			news_event = { hours = 6 id = news_1930.30 }
+			complete_national_focus = ENG_a_change_in_course
+		}
+	}
+}
+
+# Event for >>major<< Dominions leaving the Allies after UK switches to Fascism or Communism
+country_event = {
+	id = cteng.14
+	title = cteng.14.t
+	desc = cteng.14.d
+	picture = GFX_report_event_generic_sign_treaty3
+	trigger = {
+		OR = {
+			tag = CAN
+			tag = SAF
+			tag = RAJ
+			tag = AST
+			tag = NZL
+		}
+		#is_subject_of = ENG
+		OR = {
+			ENG = { has_government = fascism }
+			ENG = { has_government = communism }
+		}
+		ENG = { has_civil_war = no }
+		NOT = { has_country_flag = ENG_cannot_leave_faction }
+		NOT = { ENG = { has_country_flag = ENG_switched_to_fascism_communism_dominions_timer_flag } }
+		NOT = { has_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
+		NOT = { has_country_flag = britain_enforced_our_loyalty }
+		NOT = { has_country_flag = ENG_already_left_faction_flag }
+	}
+	fire_only_once = no
+	mean_time_to_happen = { days = 30 }
+	option = {	# We will stay
+		name = cteng.14.a
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				ENG = {
+					has_government = fascism
+				}
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.40
+			}
+		}
+		set_country_flag = ENG_dominions_stayed_with_fascist_britain_flag
+	}
+	option = { # We will leave
+		name = cteng.14.b
+		ai_chance = {
+			factor = 99
+		}
+		leave_faction = yes
+		ENG = {
+			set_autonomy = {
+			    target = ROOT
+			    autonomy_state = autonomy_free
+			}
+		}
+		if = {
+			limit = {
+				has_idea = ENG_guided_by_britain_1
+			}
+			remove_ideas = ENG_guided_by_britain_1
+		}
+		if = {
+			limit = {
+				has_idea = ENG_guided_by_britain_2
+			}
+			remove_ideas = ENG_guided_by_britain_2
+		}
+		if = {
+			limit = {
+				has_idea = ENG_guided_by_britain_raj_1
+			}
+			remove_ideas = ENG_guided_by_britain_raj_1
+		}
+		if = {
+			limit = {
+				has_idea = ENG_guided_by_britain_raj_2
+			}
+			remove_ideas = ENG_guided_by_britain_raj_2
+		}
+		if = {
+			limit = {
+				tag = RAJ
+			}
+			drop_cosmetic_tag = yes
+			retire_country_leader = yes
+		}
+		remove_from_tech_sharing_group = commonwealth_research
+		set_country_flag = ENG_already_left_faction_flag
+		ENG = { country_event = { id = cteng.15 } }
+		#hidden_effect = { news_event = { id = mtg_news.63 days = 1 } }
+	}
+}
+
+# Event for Britain notifying that Dominions are leaving
+country_event = {
+	id = cteng.15
+	title = cteng.15.t
+	desc = cteng.15.d
+	picture = GFX_report_event_generic_sign_treaty3
+	is_triggered_only = yes
+	option = { # Ok
+		name = cteng.15.a
+		remove_from_tech_sharing_group = commonwealth_research
+		effect_tooltip = {
+			FROM = {
+				leave_faction = yes
+				remove_from_tech_sharing_group = commonwealth_research
+				if = {
+					limit = {
+						has_idea = ENG_guided_by_britain_1
+					}
+					remove_ideas = ENG_guided_by_britain_1
+				}
+				if = {
+					limit = {
+						has_idea = ENG_guided_by_britain_2
+					}
+					remove_ideas = ENG_guided_by_britain_2
+				}
+				if = {
+					limit = {
+						has_idea = ENG_guided_by_britain_raj_1
+					}
+					remove_ideas = ENG_guided_by_britain_raj_1
+				}
+				if = {
+					limit = {
+						has_idea = ENG_guided_by_britain_raj_2
+					}
+					remove_ideas = ENG_guided_by_britain_raj_2
+				}
+			}
+		}
+	}
+}
+
+country_event = {  #Communist Plot
+	id = cteng.16
+	title = cteng.16.t
+	desc = cteng.16.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = { 
+		name = cteng.16.o1
+		country_event = { id = cteng.16 }	
+	}
+}
+
+country_event = {   # England - Demand Ireland
+	id = cteng.17
+	title = cteng.17.t
+	desc = cteng.17.d
+	picture = GFX_report_event_king_speech
+	is_triggered_only = yes
+
+	option = { #submit
+		name = cteng.17.o1
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				any_other_country = {
+					OR = {
+						has_guaranteed = IRE
+						is_in_faction_with = IRE
+					}					
+					is_major = yes
+					NOT = { original_tag = ENG }
+				}
+			}
+		}
+		ENG = { country_event = cteng.18 }
+	}
+	option = { #refuse
+		name = cteng.17.o2
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						is_in_faction_with = ENG
+						ENG = { is_faction_leader = yes }
+					}
+					AND = {
+						is_in_faction = no 
+						NOT = {
+							any_other_country = {
+								NOT = { original_tag = ENG }
+								has_guaranteed = IRE
+							} 
+						}
+					}
+				}
+			}
+		}
+		ENG = {
+			effect_tooltip = {
+				create_wargoal = {
+					type = annex_everything
+					target = IRE
+				}
+			}
+			country_event = cteng.19
+		}
+	}
+}
+
+country_event = {   # Ireland submits
+	id = cteng.18
+	title = cteng.18.t
+	desc = cteng.18.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	option = {
+		name = cteng.18.o1
+		ENG = {
+			transfer_state = 113
+			transfer_state = 134
+			transfer_state = 135		
+		}
+	}
+}
+
+country_event = {   # England - Ireland Refuses
+	id = cteng.19
+	title = cteng.19.t
+	desc = cteng.19.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	
+	option = {
+		name = cteng.19.o1
+		create_wargoal = {
+			type = annex_everything
+			target = IRE
+		}
+	} 
+}
+
+country_event = {   #Demand Return of India to fold
+	id = cteng.20
+	title = cteng.20.t
+	desc = cteng.20.d
+	picture = GFX_report_event_king_speech
+	is_triggered_only = yes
+
+	option = {
+		name = cteng.20.o1 #submit
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				any_other_country = {
+					is_major = yes
+					NOT = { tag = ENG }
+					OR = {
+						has_guaranteed = THIS
+						is_in_faction_with = THIS
+					}
+				}
+			}
+		}
+		ENG = { country_event = cteng.21 }
+	}
+	option = { #refuse
+		name = cteng.20.o2
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						is_in_faction_with = ENG
+						ENG = { is_faction_leader = yes }
+					}
+					AND = {
+						is_in_faction = no 
+						NOT = {
+							any_other_country = {
+								NOT = { tag = ENG }
+								has_guaranteed = THIS
+							} 
+						}
+					}
+				}
+			}
+		}
+		ENG = {
+			effect_tooltip = {
+				create_wargoal = {
+					type = annex_everything
+					target = PREV
+				}
+			}
+			country_event = cteng.22
+		}
+	}
+}
+
+country_event = {   #RAJ accepts
+	id = cteng.21
+	title = cteng.21.t
+	desc = cteng.21.d
+	picture = GFX_report_event_usa_macarthur_speech
+	is_triggered_only = yes
+	option = {
+		name = cteng.21.o1	
+		if = {
+			limit = {
+				tag = RAJ
+			}
+			RAJ = {
+				set_politics = {
+					ruling_party = fascism
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.40
+				}
+			}				
+			ENG = {	puppet = RAJ }		
+			RAJ = {	set_cosmetic_tag = RAJ_UK }
+		}
+	}
+}
+country_event = {   #RAJ refuses
+	id = cteng.22
+	title = cteng.22.t
+	desc = cteng.22.d
+	picture = GFX_report_event_usa_heavy_cruiser
+	is_triggered_only = yes
+	
+	option = {
+		name = cteng.22.o1
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+	}
+}
+
+country_event = {   # demands INS
+	id = cteng.23
+	title = cteng.23.t
+	desc = cteng.23.d
+	picture = GFX_report_event_usa_heavy_cruiser
+	is_triggered_only = yes
+
+	option = { #submit
+		name = cteng.23.o1
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				any_other_country = {
+					OR = {
+						has_guaranteed = HOL
+						is_in_faction_with = HOL
+					}					
+					is_major = yes
+					NOT = { original_tag = ENG }
+				}
+			}
+		}
+		ENG = { country_event = cteng.24 }
+	}
+	option = { #refuse
+		name = cteng.23.o2
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						is_in_faction_with = ENG
+						ENG = { is_faction_leader = yes }
+					}
+					AND = {
+						is_in_faction = no 
+						NOT = {
+							any_other_country = {
+								NOT = { original_tag = ENG }
+								has_guaranteed = HOL
+							} 
+						}
+					}
+				}
+			}
+		}
+		ENG = {
+			effect_tooltip = {
+				create_wargoal = {
+					type = annex_everything
+					target = HOL
+				}
+			}
+			country_event = cteng.25
+		}
+	}
+}
+
+country_event = {   # submits
+	id = cteng.24
+	title = cteng.24.t
+	desc = cteng.24.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	option = {
+		name = cteng.24.o1
+		ENG = {	puppet = INS	}
+	}
+}
+
+country_event = {   # refuses
+	id = cteng.25
+	title = cteng.25.t
+	desc = cteng.25.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	
+	option = {
+		name = cteng.25.o1
+		create_wargoal = {
+			type = annex_everything
+			target = HOL
+		}
+	} 
+}
