@@ -43,8 +43,9 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			#add_ideas = {	GRE_support_the_centre_focus }
-			add_stability = 0.05
+			set_country_flag = ct_demo_monarchy
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = GRE_george_II
 		}
 	}
 	focus = {
@@ -2114,23 +2115,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_expand_pyrkal"
-			51 = {
-			if = {
+			random_owned_controlled_state = {
+				prioritize = { 47 }
 				limit = {
 					free_building_slots = {
 						building = arms_factory
 						size > 0
-						include_locked = yes
 					}
 				}
-			}
-				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
-			}
+			}	
 		}
 	}
 	focus = {
