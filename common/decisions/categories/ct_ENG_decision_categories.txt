@@ -1,0 +1,15 @@
+################
+##### ENG ######
+################
+ENG_congress = {
+	icon = usa_congress
+	allowed = {
+		original_tag = ENG
+	}
+	scripted_gui = eng_congress_decision_ui	
+	priority = 85
+}
+research_project = {
+		allowed = {
+		original_tag = ENG
+}
