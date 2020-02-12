@@ -1,0 +1,485 @@
+ideas = {
+
+	country = {
+		VFR_neutrality = {
+
+			picture = VFR_neu
+
+			allowed = {
+				original_tag = VFR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				enemy_justify_war_goal_time = 10
+				justify_war_goal_time = 10
+				join_faction_tension = 1
+				ai_get_ally_desire_factor = -1000
+				send_volunteer_divisions_required = 100
+			}
+		}
+		idea_VFR_sto = {
+			picture = sto
+
+			allowed = {
+				original_tag = VFR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				conscription = -0.005
+			}
+		}
+		recovering_from_war = {
+
+			picture = FRA_matignon_agreements
+
+			allowed = {
+				original_tag = VFR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		idea_VFR_efr = {
+
+			picture = efr
+
+			allowed = {
+				original_tag = VFR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				conscription_factor = -0.50
+				surrender_limit = -0.3
+			}
+		}
+	
+	}
+
+	# POLITICAL
+	political_advisor = {
+		VFR_marcel_bucard = {
+			
+			
+			allowed = {
+				original_tag = "VFR"
+			}
+			traits = { fascist_demagogue }
+	
+			on_add = {
+				country_event = political.7
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}		
+
+		VFR_paul_baudouin = {
+			
+			allowed = {
+				original_tag = "VFR"
+			}
+			
+			picture = generic_political_advisor_europe_3
+			
+			traits = { smooth_talking_charmer }
+	
+			on_add = {
+			}
+	
+			do_effect = {
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		VFR_gaston_henry_haye = {
+			
+			allowed = { 
+				original_tag = "VFR"
+			}
+			
+			picture = generic_political_advisor_europe_5
+			
+			traits = { silent_workhorse }
+	
+			on_add = {
+			}
+	
+			do_effect = {
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+		
+	# MILITARY
+	army_chief = {
+		VFR_maxime_weygand = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+
+			cost = 150
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		VFR_alphonse_georges = {
+			
+			
+			allowed = {
+				original_tag = "VFR"
+			}
+			
+			traits = { army_chief_maneuver_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+	}
+	navy_chief = {
+		
+		VFR_francois_darlan = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		VFR_jean_marie_abrial = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+			
+
+			
+			traits = { navy_chief_commerce_raiding_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	air_chief = {
+		
+	}
+	
+	high_command = {
+		
+		VFR_charles_huntziger = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+			traits = { army_logistics_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		
+		VFR_jean_francois_jannekeyn = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+			traits = { air_tactical_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		
+		VFR_jean_de_laborde = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+			traits = { navy_capital_ship_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	tank_manufacturer = {
+
+		designer = yes
+	
+		# TECHNOLOGY
+		VFR_renault_fra = {
+		
+			picture = renault
+			
+			cost = 75
+						
+			allowed = {
+				original_tag = VFR
+			}
+						
+			research_bonus = {
+				armor = 0.10
+			}
+			
+
+			traits = { heavy_tank_manufacturer }
+		}
+	
+		VFR_AMX = {
+		
+			picture = generic_tank_manufacturer_2
+			
+			cost = 75
+						
+			allowed = {
+				original_tag = VFR
+			}
+						
+			research_bonus = {
+				armor = 0.10
+			}
+			
+
+			traits = { fast_tank_manufacturer }
+		}
+	}
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		VFR_somua = {
+		
+			allowed = {
+				original_tag = VFR
+			}
+
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+
+		}
+		
+		VFR_mas = {
+						
+			allowed = {
+				original_tag = VFR
+			}
+						
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	
+		VFR_schneider = {
+						
+			allowed = {
+				original_tag = VFR
+			}		
+			
+			research_bonus = {
+				artillery = 0.10
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes
+		
+		VFR_morane_saulnier = {
+			
+			allowed = {
+				original_tag = VFR
+			}
+			
+			cost = 75
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		
+		VFR_bloch = {
+						
+			allowed = {
+				original_tag = VFR
+			}
+			
+			cost = 75
+						
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+		
+		VFR_amiot = {
+						
+			allowed = {
+				original_tag = VFR
+			}
+			
+			cost = 75
+						
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+		
+		VFR_levasseur = {
+						
+			allowed = {
+				original_tag = VFR
+			}
+			
+			cost = 75
+						
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+		
+	}
+	naval_manufacturer = {
+
+		designer = yes
+		
+		VFR_fcm = {
+						
+			allowed = {
+				original_tag = VFR
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { naval_manufacturer }
+		}
+	}
+	
+	industrial_concern = {	
+		
+		VFR_famh = {
+						
+			allowed = {
+				original_tag = VFR
+			}
+						
+			research_bonus = {
+				industry = 0.10
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+	
+	
+	theorist = {
+		
+		VFR_jean_decoux = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+			
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+		
+		VFR_victor_denain = {
+			
+			
+			allowed = {
+				original_tag = VFR
+			}
+			
+			cost = 250 
+			
+			research_bonus = {
+				cat_operational_integrity = 0.10
+			}
+			
+			traits = { assault_avaition }
+		}
+		
+		VFR_jean_marie_bergeret = {
+						
+			allowed = {
+				original_tag = VFR
+			}
+						
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+	}	
+}
