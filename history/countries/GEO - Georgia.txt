@@ -1,0 +1,51 @@
+﻿capital = 231 #Tbilisi
+add_ideas = {
+	idea_depression_paralysis
+	great_depression
+}
+set_research_slots = 2
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	mass_assault = 1
+}
+1933.1.1 = {
+	add_political_power = 200	
+		#generic focuses
+	complete_national_focus = exp1_army_effort
+	complete_national_focus = exp1_navy_effort
+	complete_national_focus = pre_extra_tech_slot
+	complete_national_focus = pre1_aviation_effort
+	complete_national_focus = pre2_aviation_effort
+	complete_national_focus = pre1_political_effort
+	complete_national_focus = pre1_infrastructure_effort
+	complete_national_focus = pre3_infrastructure_effort
+	set_technology = {
+	}
+}
+
+set_popularities = {
+	democratic = 25
+	communism = 75
+}
+create_country_leader = {
+	name = "Noe Zhordania"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1953.3.1"
+	ideology = liberalism
+	traits = {
+		
+	}
+}
+create_country_leader = {
+	name = "Kandid Charkviani"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+	expire = "1953.3.1"
+	ideology = stalinism
+	traits = {
+		
+	}
+}

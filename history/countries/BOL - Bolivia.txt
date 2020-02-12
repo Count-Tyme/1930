@@ -1,0 +1,62 @@
+﻿capital = 302
+set_stability = 0.40
+set_research_slots = 1
+oob = "BOL_1930"
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+1932.11.7 = {
+	add_political_power = 200	
+		#generic focuses
+	complete_national_focus = exp1_army_effort
+	complete_national_focus = exp1_navy_effort
+	complete_national_focus = pre_extra_tech_slot
+	complete_national_focus = pre1_aviation_effort
+	complete_national_focus = pre2_aviation_effort
+	complete_national_focus = pre1_political_effort
+	complete_national_focus = pre1_infrastructure_effort
+	complete_national_focus = pre3_infrastructure_effort
+	
+	set_technology = {
+		gw_artillery = 1
+	}
+}
+add_ideas = {
+	great_depression
+	idea_depression_paralysis
+	low_military_budget
+}
+set_country_flag = monroe_doctrine
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1934.11.11"
+	election_frequency = 72
+	elections_allowed = yes
+}
+
+set_popularities = {
+	neutrality = 100
+}
+
+create_country_leader = {
+	name = "José Luis Tejada Sorzano"
+	desc = "POLITICS_JOSE_LUIS_TEJADA_SORZANO_DESC"
+	picture = "Portrait_Bolivia_Jose_Luis_Tejada_Sorzano.dds"
+	expire = "1965.1.1"
+	ideology = despotism # liberalism, personally, but puppet for military
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Óscar Únzaga de la Vega"
+	desc = "POLITICS_OSCAR_UNZAGA_DESC"
+	picture = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = falangism
+	traits = {
+		#
+	}
+}

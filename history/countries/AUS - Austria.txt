@@ -1,0 +1,114 @@
+﻿capital = 4
+oob = "AUS_1930"
+set_research_slots = 2
+set_technology = {
+	infantry_weapons = 1
+}
+1932.11.7 = {
+	add_political_power = 200	
+		#generic focuses
+	complete_national_focus = exp1_army_effort
+	complete_national_focus = exp1_navy_effort
+	complete_national_focus = pre_extra_tech_slot
+	complete_national_focus = pre1_aviation_effort
+	complete_national_focus = pre2_aviation_effort
+	complete_national_focus = pre1_political_effort
+	complete_national_focus = pre1_infrastructure_effort
+	complete_national_focus = pre3_infrastructure_effort
+	
+	set_technology = {
+		gw_artillery = 1
+	}
+}
+	
+set_popularities = {
+	neutrality = 0
+	fascism = 20
+	democratic = 79
+	communism = 1
+}		
+			
+set_politics = {
+	ruling_party = democratic
+	last_election = "1929.12.31"
+	election_frequency = 60
+	elections_allowed = yes
+}
+
+set_stability = 0.40
+
+create_country_leader = {
+	name = "Kurt Schuschnigg"
+	desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
+	picture = "Portrait_Austria_Kurt_Schuschnigg.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Karl Renner"
+	desc = "POLITICS_KARL_RENNER_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Arthur Seyss-Inquart"
+	desc = "POLITICS_ARTHUR_SEYSS_INQUART_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Engelbert Dolfuss"
+	desc = "POLITICS_DOLFUSS_DESC"
+	picture = "Portrait_AUS_Engelbert_Dollfuss.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Alfred Klahr"
+	desc = "POLITICS_ALFRED_KLAHR_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Alexander Lohr"
+	picture = "Portrait_Austria_Alexander_Lohr.dds"
+	traits = { trickster }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Lothar Rendulic"
+	picture = "Portrait_Austria_Lothar_Rendulic.dds"
+	traits = {  infantry_officer commando panzer_leader trait_mountaineer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}

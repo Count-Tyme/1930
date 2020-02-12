@@ -1,0 +1,50 @@
+﻿capital = 314
+add_ideas = {
+	great_depression
+	idea_depression_paralysis
+	low_military_budget
+}
+oob = "ELS_1930"
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+1932.11.7 = {
+	add_political_power = 200	
+		#generic focuses
+	complete_national_focus = exp1_army_effort
+	complete_national_focus = exp1_navy_effort
+	complete_national_focus = pre_extra_tech_slot
+	complete_national_focus = pre1_aviation_effort
+	complete_national_focus = pre2_aviation_effort
+	complete_national_focus = pre1_political_effort
+	complete_national_focus = pre1_infrastructure_effort
+	complete_national_focus = pre3_infrastructure_effort
+	set_technology = {
+		gw_artillery = 1
+	}
+}
+set_country_flag = monroe_doctrine
+set_stability = 0.40
+set_research_slots = 1
+set_war_support = 0.1
+set_convoys = 5
+set_politics = {
+	ruling_party = fascism
+	last_election = "1935.1.15"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	fascism = 100
+}
+create_country_leader = {
+	name = "Maximiliano Hernández Martínez"
+	desc = "POLITICS_MAXIMILIANO_HERNANDEZ_MARTINEZ_DESC"
+	picture = "GFX_portrait_el_salvador_maximiliano_hernandez_martinez"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}

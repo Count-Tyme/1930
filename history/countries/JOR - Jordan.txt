@@ -1,0 +1,78 @@
+﻿capital = 455
+set_stability = 0.40
+add_ideas = {
+	idea_depression_paralysis	
+	great_depression
+}
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+set_research_slots = 1
+set_convoys = 5
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 25
+	fascism = 20
+	communism = 5
+	neutrality = 50
+}
+1933.1.1 = {
+	add_political_power = 200	
+		#generic focuses
+	complete_national_focus = exp1_army_effort
+	complete_national_focus = exp1_navy_effort
+	complete_national_focus = pre_extra_tech_slot
+	complete_national_focus = pre1_aviation_effort
+	complete_national_focus = pre2_aviation_effort
+	complete_national_focus = pre1_political_effort
+	complete_national_focus = pre1_infrastructure_effort
+	complete_national_focus = pre3_infrastructure_effort
+	set_technology = {
+		primitive_machine_tools = 1
+		gw_artillery = 1
+		sliderule = 1
+	}
+}
+
+create_country_leader = {
+	name = "Hashim Kheir"
+	desc = ""
+	picture = "gfx/leaders/JOR/Portrait_Arabia_Generic_2.dds"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Saeed Ahmadi"
+	desc = ""
+	picture = "gfx/leaders/JOR/Portrait_Arabia_Generic_fascism1.dds"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Abdullah bin al-Hussein"
+	desc = ""
+	picture = "gfx/leaders/JOR/Portrait_Arabia_Generic_land_3.dds"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Fu'ad Nassar"
+	desc = ""
+	picture = "gfx/leaders/JOR/Portrait_Arabia_Generic_navy_2.dds"
+	ideology = leninism
+	traits = {
+		#
+	}
+}

@@ -1,0 +1,13 @@
+﻿capital = 104
+set_research_slots = 2
+set_technology = {
+	tech_support = 1	
+	infantry_weapons = 1
+}
+set_popularities = {
+	fascism = 33
+	neutrality = 33
+	communism = 34
+}
+
+
