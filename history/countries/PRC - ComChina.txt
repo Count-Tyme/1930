@@ -1,0 +1,140 @@
+﻿capital = 622
+set_research_slots = 1
+oob = "PRC_1930"
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	mass_assault = 1
+}
+set_stability = 0.40
+set_war_support = 0.7
+add_ideas = {
+	closed_economy
+	service_by_requirement
+	partial_economic_mobilisation
+	great_depression
+	idea_depression_paralysis
+}
+1932.11.7 = {
+	add_political_power = 200	
+		#generic focuses
+	complete_national_focus = exp1_army_effort
+	complete_national_focus = exp1_navy_effort
+	complete_national_focus = pre_extra_tech_slot
+	complete_national_focus = pre1_aviation_effort
+	complete_national_focus = pre2_aviation_effort
+	complete_national_focus = pre1_political_effort
+	complete_national_focus = pre1_infrastructure_effort
+	complete_national_focus = pre3_infrastructure_effort
+	set_technology = {
+		gw_artillery = 1
+	}
+}
+save_global_event_target_as = WTT_communist_china
+set_politics = {
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	communism = 100
+}
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	add_ideas = {
+		PRC_the_long_march_1
+		PRC_low_popular_support_3
+		PRC_power_struggles
+		PRC_red_army_weakened
+	}
+}
+
+add_opinion_modifier = { target = CHI modifier = hostile_status }
+
+create_country_leader = {
+	name = "Mao Zedong"
+	desc = "POLITICS_MAO_ZEDONG_DESC"
+	picture = "GFX_portrait_prc_mao_zedong"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		cornered_fox
+	}
+}
+
+create_field_marshal = {
+	name = "Mao Zedong"
+	gfx = "GFX_portrait_prc_mao_zedong"
+	traits = { defensive_doctrine trait_cautious politically_connected }
+	skill = 4
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "Zhu De"
+	picture = "Portrait_Zhu_De.dds"
+	traits = { infantry_officer organizer }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "He Long"
+	picture = "Portrait_He_Long.dds"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Chen Yi"
+	gfx = "GFX_portrait_prc_chen_yi"
+	traits = { infantry_officer }
+	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Ye Jianying"
+	picture = "Portrait_Ye_Jianying.dds"
+	traits = { }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Peng Dehuai"
+	picture = "Portrait_Peng_Dehuai.dds"
+	traits = { infantry_officer trait_mountaineer }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 5
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Lin Biao"
+	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_warlord1.dds"
+	traits = { infantry_officer trait_mountaineer }
+	skill = 5
+	attack_skill = 4
+	defense_skill = 5
+	planning_skill = 3
+	logistics_skill = 4
+}

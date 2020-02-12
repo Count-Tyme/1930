@@ -1,0 +1,1756 @@
+﻿capital = 361
+set_country_flag = ct_usg_setup
+oob = "USA_1930"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "USA_1930_naval_mtg"
+	else = {
+		set_naval_oob = "USA_1930_naval_legacy"
+	}
+}
+set_research_slots = 3
+set_stability = 0.45
+set_war_support = 0
+set_variable = { var = senators_support value = 48 }
+set_variable = { var = senators_total value = 96 }
+set_variable = { var = representatives_support value = 218 }
+set_variable = { var = representatives_total value = 435 }
+set_variable = { var = quorum_low value = 39 }
+set_variable = { var = quorum_medium value = 49 }
+set_variable = { var = quorum_high value = 58 }
+USA_recalc_congress_icon_frames = yes
+USA = {
+	country_event = { id = usa.50 days = 2 }
+	country_event = { id = usa.51 days = 2 }
+}
+# Starting tech
+set_technology = {
+	marines = 1
+	infantry_weapons = 1
+	tech_support = 1		
+	tech_engineers = 1
+	gw_artillery = 1
+	gwtank = 1
+	early_fighter = 1
+	motorised_infantry = 1
+	sliderule = 1
+}
+
+1932.11.7 = {
+	country_event = { id = ctusa.17 days = 1 }
+	set_country_flag = ct_usa_bank_crisis2
+	set_country_flag = ct_usa_bank_crisis3
+	set_country_flag = ct_usa_bank_crisis4
+	set_country_flag = ct_usa_bank_crisis5
+	set_country_flag = ct_usa_bank_crisis6
+	add_political_power = 200
+	complete_national_focus = USA_hoover
+	complete_national_focus = USA_federal_home_loan_bank_act
+	complete_national_focus = USA_hoovers_propaganda
+	complete_national_focus = USA_norris_la_guardia
+	complete_national_focus = USA_smoot_hawley
+	complete_national_focus = USA_rfc
+	complete_national_focus = USA_dont_pay_the_vets
+	complete_national_focus = USA_democratic_national_convention
+	complete_national_focus = USA_industrial_progression
+	complete_national_focus = USA_30_tech_slot
+	complete_national_focus = USA_ford_expands_internationally
+	complete_national_focus = USA_pattons_dream
+	complete_national_focus = USA_the_legacy_of_wright
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1932.11.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 98
+		communism = 2
+	}	
+	set_technology = {
+		base_strike = 1
+		early_bomber = 1
+		primitive_machine_tools = 1
+		tech_recon = 1
+	}
+	set_research_slots = 4
+	set_stability = 0.01
+	set_war_support = 0.2
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		early_carrier = 1
+		basic_carrier = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		improved_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		improved_airplane_launcher = 1
+	}
+	add_ideas = MTG_naval_treaty_adherent
+}
+#Monroe Doctrine
+#give_guarantee = CAN
+#give_guarantee = MEX
+#give_guarantee = CUB
+#give_guarantee = HAI
+#give_guarantee = DOM
+#give_guarantee = GUA
+#give_guarantee = HON
+#give_guarantee = ELS
+#give_guarantee = NIC
+#give_guarantee = COS
+#give_guarantee = PAN
+#give_guarantee = VEN
+#give_guarantee = COL
+#give_guarantee = ECU
+#give_guarantee = PRU
+#give_guarantee = BRA
+#give_guarantee = BOL
+#give_guarantee = CHL
+#give_guarantee = PAR
+#give_guarantee = ARG
+#give_guarantee = URG
+set_convoys = 400
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.11.8"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 98
+	communism = 2
+}
+add_ideas = {
+	undisturbed_isolation
+	super_great_depression
+	idea_depression_paralysis
+	disarmed_nation
+	free_trade
+	home_of_the_free
+	usa_segregation
+	usa_military1
+}
+# DIPLOMACY
+set_autonomy = {
+	target = PHI
+	autonomous_state =  autonomy_puppet
+}
+create_country_leader = {
+	name = "Herbert Hoover"
+	desc = "POLITICS_HOOVER_DESC"
+	picture = "Portrait_USA_Herbert_Hoover.dds"
+	expire = "1937.1.1"
+	ideology = liberalism
+	traits = {
+	}
+}
+#create_country_leader = {
+#	name = "Franklin Delano Roosevelt"
+#	desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
+#	picture = "Portrait_USA_Franklin_Roosevelt.dds"
+#	expire = "1947.1.1"
+#	ideology = liberalism
+#	traits = {
+#		dislikes_germany
+#	}
+#}
+create_country_leader = {
+	name = "William Dudley Pelley"
+	desc = "POLITICS_WILLIAM_DUDLEY_PELLEY_DESC"
+	picture = "Portrait_USA_William_Dudley_Pelley.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		
+	}
+}
+create_country_leader = {
+	name = "Earl Browder"
+	desc = "POLITICS_EARL_BROWDER_DESC"
+	picture = "portrait_USA_earl_browder.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		
+	}
+}
+    #     ###   ###
+   ##    #   #  #   #
+  #  #   #   #  #   #
+ # # #  #   #  #   #
+#      # ##     ##
+		create_navy_leader = { #PA
+			name = "Arthur Hepburn"
+			picture = "Portrait_USA_Arthur_Hepburn.dds"
+			traits = { gentlemanly old_guard_navy }
+			skill = 1
+			id = 7701
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 4
+		}
+		create_navy_leader = { #IL
+			name = "Arthur Radford"
+			picture = "Portrait_USA_Arthur_Radford.dds"
+			traits = { air_controller }
+			skill = 2
+			id = 7702
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+		create_navy_leader = { #OR
+			name = "Daniel Barbey"
+			picture = "Portrait_USA_Daniel_Barbey.dds"
+			traits = { superior_tactician navy_career_officer }
+			skill = 4
+			id = 7703
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 4
+		}
+		create_navy_leader = { #WI
+			name = "Ralph Ofstie"
+			picture = "Portrait_USA_Ralph_Ofstie.dds"
+			traits = { fleet_protector ironside ground_pounder }
+			skill = 3
+			id = 7704
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+		create_navy_leader = { #CA
+			name = "William Standley"
+			picture = "Portrait_USA_William_Standley.dds"
+			traits = { gentlemanly old_guard_navy }
+			skill = 2
+			id = 7705
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+		create_navy_leader = { #PA
+			name = "Lloyd Mustin"
+			picture = "Portrait_USA_Lloyd_Mustin.dds"
+			traits = {  }
+			skill = 3
+			id = 7706
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+		create_navy_leader = { #PA
+			name = "Alan Kirk"
+			picture = "Portrait_USA_Alan_G_Kirk.dds"
+			traits = { blockade_runner }
+			skill = 3
+			id = 7707
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 5
+		}
+		create_navy_leader = { #MI
+			name = "Aubrey Fitch"
+			picture = "Portrait_USA_Aubrey_W_Fitch.dds"
+			traits = { navy_career_officer aviation_enthusiast superior_tactician }
+			skill = 4
+			id = 7708
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 6
+			coordination_skill = 4
+		}
+		create_navy_leader = { #KY
+			name = "Husband E. Kimmel"
+			picture = "Portrait_USA_Husband_E_Kimmel.dds"
+			traits = { old_guard_navy }
+			skill = 1
+			id = 7709
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+		create_navy_leader = { #MS - Loyal
+			name = "John McCain Sr."
+			picture = "Portrait_USA_John_S_McCain_Sr.dds"
+			traits = { air_controller navy_career_officer }
+			skill = 2
+			id = 7710
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+		create_navy_leader = { #IN
+			name = "Jonas Ingram"
+			picture = "Portrait_USA_Jonas_Ingram.dds"
+			traits = { blockade_runner }
+			skill = 2
+			id = 7711
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 6
+		}
+		create_navy_leader = { #DC
+			name = "Royal E. Ingersoll"
+			picture = "Portrait_USA_Royal_E_Ingersoll.dds"
+			traits = { superior_tactician ironside naval_lineage }
+			skill = 5
+			id = 7712
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 5
+			coordination_skill = 7
+		}
+		create_navy_leader = { #MI
+			name = "Thomas C. Hart"
+			picture = "Portrait_USA_Thomas_C._Hart.dds"
+			traits = {  }
+			skill = 2
+			id = 7713
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+		create_navy_leader = { #MN
+			name = "Walden L. Ainsworth"
+			picture = "Portrait_USA_Walden_Ainsworth.dds"
+			traits = { ironside ground_pounder }
+			skill = 4
+			id = 7714
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+		create_navy_leader = { #KY
+			name = "Willis A. Lee"
+			picture = "Portrait_USA_Willis_A_Lee.dds"
+			traits = { fly_swatter ironside gunnery_expert bold }
+			skill = 4
+			id = 7715
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+		create_navy_leader = { #NJ
+			name = "Arthur Carpender"
+			picture = "Portrait_USA_Arthur_Carpender.dds"
+			traits = { }
+			skill = 2
+			id = 7716
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+
+		#######  ARMY  #######
+		create_corps_commander = { #OH
+			name = "Fred Walker"
+			picture = "Portrait_USA_Fred_Walker.dds"
+			traits = { war_hero brilliant_strategist }
+			skill = 4
+			id = 7717
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 2
+		}
+		create_corps_commander = { #FL
+			name = "Roy Geiger"
+			picture = "Portrait_USA_Roy_Geiger.dds"
+			traits = { commando }
+			skill = 3
+			id = 7718
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		create_corps_commander = { #Virginia
+			name = "Samuel Cumming"
+			picture = "Portrait_USA_Samuel_C_Cumming.dds"
+			traits = { commando }
+			skill = 2
+			id = 7719
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #Virginia
+			name = "Alexander Vandegrift"
+			picture = "Portrait_USA_Alexander_Vandegrift.dds"
+			traits = { commando naval_invader infantry_leader }
+			skill = 4
+			id = 7720
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = { #D.C.
+			name = "Anthony McAuliffe"
+			picture = "Portrait_USA_Anthony_McAuliffe.dds"
+			traits = { commando bearer_of_artillery trait_reckless }
+			skill = 3
+			id = 7721
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = { #Canada
+			name = "Ben Lear"
+			picture = "Portrait_USA_Ben_Lear.dds"
+			traits = { old_guard harsh_leader }
+			skill = 1
+			id = 7722
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		create_corps_commander = {  #KY
+			name = "Carlos Brewer"
+			picture = "Portrait_USA_Carlos_Brewer.dds"
+			traits = { bearer_of_artillery }
+			skill = 2
+			id = 7723
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = { #IL
+			name = "Charles Billingslea"
+			picture = "Portrait_USA_Charles_Billingslea.dds"
+			traits = {  }
+			skill = 2
+			id = 7724
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		create_corps_commander = { #NE
+			name = "Charles Bonesteel Jr."
+			picture = "Portrait_USA_Charles_Bonesteel_Jr.dds"
+			traits = {  }
+			skill = 3
+			id = 7725
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		create_corps_commander = { #NE
+			name = "Charles H. Corlett"
+			picture = "Portrait_USA_Charles_H_Corlett.dds"
+			traits = {  }
+			skill = 2
+			id = 7726
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 5
+			logistics_skill = 3
+		}
+		create_corps_commander = { #KS 
+			name = "Charles Ryder"
+			picture = "Portrait_USA_Charles_Ryder.dds"
+			traits = { war_hero infantry_officer }
+			skill = 2
+			id = 7727
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = { #MA
+			name = "Clarence Lionel Adcock"
+			picture = "Portrait_USA_Clarence_Lionel_Adcock.dds"
+			traits = { trait_engineer }
+			skill = 2
+			id = 7728
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_corps_commander = { #MA
+			name = "Creighton Abrams"
+			picture = "Portrait_USA_Creighton_Abrams.dds"
+			traits = { panzer_leader }
+			skill = 3
+			id = 7729
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		create_corps_commander = { #VA
+			name = "Edward Almond"
+			picture = "Portrait_USA_Edward_Almond.dds"
+			traits = { }
+			skill = 1
+			id = 7730
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		create_corps_commander = { #MI
+			name = "Emil Reinhardt"
+			picture = "Portrait_USA_Emil_Reinhardt.dds"
+			traits = { }
+			skill = 2
+			id = 7731
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		create_corps_commander = { #MA
+			name = "Ernest Harmon"
+			picture = "Portrait_USA_Ernest_Harmon.dds"
+			traits = { panzer_leader }
+			skill = 3
+			id = 7732
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = { #KY
+			name = "Franklin C. Sibert"
+			picture = "Portrait_USA_Franklin_C_Sibert.dds"
+			traits = { infantry_officer naval_invader }
+			skill = 2
+			id = 7733
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_corps_commander = { #WA
+			name = "Frederick Gilbreath"
+			picture = "Portrait_USA_Frederick_Gilbreath.dds"
+			traits = { cavalry_officer }
+			skill = 1
+			id = 7734
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		create_field_marshal = { #PA
+			name = "George Marshall"
+			picture = "Portrait_USA_George_Marshall.dds"
+			traits = { offensive_doctrine defensive_doctrine logistics_wizard expert_delegator }
+			skill = 5
+			id = 7735
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "Gustav Braun Jr."
+			picture = "Portrait_USA_Gustav_J_Braun.dds"
+			traits = { war_hero trait_reckless trickster }
+			skill = 2
+			id = 7736
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #IL
+			name = "Hobart Gay"
+			picture = "Portrait_USA_Hobart_Gay.dds"
+			traits = { armor_officer trait_reckless }
+			skill = 4
+			id = 7737
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		create_corps_commander = { #Alabama
+			name = "Holland Smith"
+			picture = "Portrait_USA_Holland_Smith.dds"
+			traits = { naval_invader trickster commando }
+			skill = 4
+			id = 7738
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_corps_commander = { #WY -  CW1 Loyal Herit 
+			name = "Innis Swift"
+			picture = "Portrait_USA_Innis_Swift.dds"
+			traits = { infantry_officer }
+			skill = 2
+			id = 7739
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #PA
+			name = "Jacob Devers"
+			picture = "Portrait_USA_Jacob_L_Devers.dds"
+			traits = { skilled_staffer organizer brilliant_strategist career_officer }
+			skill = 4
+			id = 7740
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+		create_corps_commander = { 
+			name = "James Dyce Alger"
+			picture = "Portrait_USA_James_Alger.dds"
+			traits = { armor_officer }
+			skill = 1
+			id = 7741
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		create_corps_commander = { #NY
+			name = "James Gavin"
+			picture = "Portrait_USA_James_M._Gavin.dds"
+			traits = { commando paratrooper trait_reckless }
+			skill = 3
+			id = 7742
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #FL
+			name = "James Van Fleet"
+			picture = "Portrait_USA_James_Van_Fleet.dds"
+			traits = { infantry_officer }
+			skill = 3
+			id = 7743
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		create_corps_commander = { #WV
+			name = "John Lucas"
+			picture = "Portrait_USA_John_P_Lucas.dds"
+			traits = { inflexible_strategist }
+			skill = 2
+			id = 7744
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #IN
+			name = "John Millikin"
+			picture = "Portrait_USA_John_Millikin.dds"
+			traits = { old_guard trait_cautious }
+			skill = 1
+			id = 7745
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		create_corps_commander = { #AR
+			name = "John Wood"
+			picture = "Portrait_USA_John_Shirley_Wood.dds"
+			traits = { panzer_leader trickster trait_reckless brilliant_strategist }
+			skill = 3
+			id = 7746
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_field_marshal = { #PA
+			name = "Joseph McNarney"
+			picture = "Portrait_USA_Joseph_Mcnarney.dds"
+			traits = { thorough_planner }
+			skill = 2
+			id = 7747
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = { #TN
+			name = "Julius Ochs Adler"
+			picture = "Portrait_USA_Julius_Ochs_Adler.dds"
+			traits = { }
+			skill = 1
+			id = 7748
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #Virginia
+			name = "Lemuel Shepherd Jr."
+			picture = "Portrait_USA_Lemuel_Shepherd_Jr.dds"
+			traits = { war_hero commando trait_reckless }
+			skill = 3
+			id = 7749
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		create_corps_commander = { #MA
+			name = "Matthew Ridgway"
+			picture = "Portrait_USA_Matthew_Ridgway.dds"
+			traits = { infantry_officer commando paratrooper }
+			skill = 3
+			id = 7750
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		create_corps_commander = { #CA
+			name = "Oliver Smith"
+			picture = "Portrait_USA_Oliver_P._Smith.dds"
+			traits = { }
+			skill = 2
+			id = 7751
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		create_corps_commander = { #KS
+			name = "Paul Kendall"
+			picture = "Portrait_USA_Paul_Wilkins_Kendall.dds"
+			traits = { infantry_leader }
+			skill = 3
+			id = 7752
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		create_corps_commander = { #OH
+			name = "Robert Eichelberger"
+			picture = "Portrait_USA_Robert_Eichelberger.dds"
+			traits = { war_hero adaptable naval_invader }
+			skill = 3
+			id = 7753
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = { #CA
+			name = "Robert Frederick"
+			picture = "Portrait_USA_Robert_T._Frederick.dds"
+			traits = { commando paratrooper trait_reckless }
+			skill = 4
+			id = 7754
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 5
+		}
+		create_corps_commander = { #IA
+			name = "Robert Grow"
+			picture = "Portrait_USA_Robert_W._Grow.dds"
+			traits = { panzer_leader }
+			skill = 2
+			id = 7755
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #Texas
+			name = "Roderick Allen"
+			picture = "Portrait_USA_Roderick_Allen.dds"
+			traits = { panzer_leader  }
+			skill = 4
+			id = 7756
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		create_corps_commander = { #IA
+			name = "Roscoe Woodruff"
+			picture = "Portrait_USA_Roscoe_Woodruff.dds"
+			traits = {  }
+			skill = 3
+			id = 7757
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_corps_commander = { #Confederate Son KY
+			name = "Simon Buckner Jr."
+			picture = "Portrait_USA_Simon_B_Buckner_Jr.dds"
+			traits = {  }
+			skill = 2
+			id = 7758
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "Stafford Irwin"
+			picture = "Portrait_USA_Stafford_Irwin.dds"
+			traits = { bearer_of_artillery }
+			skill = 2
+			id = 7759
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #UT 1CW Loyal
+			name = "Terry de la Mesa Allen"
+			picture = "Portrait_USA_Terry_Allen.dds"
+			traits = { war_hero trait_reckless }
+			skill = 3
+			id = 7760
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		create_corps_commander = { #NY 
+			name = "Theodore Roosevelt Jr."
+			picture = "Portrait_USA_Theodore_Roosevelt_Jr.dds"
+			traits = { trait_reckless }
+			skill = 3
+			id = 7761
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		create_corps_commander = { #MS 1cw Confed
+			name = "Troy Middleton"
+			picture = "Portrait_USA_Troy_Middleton.dds"
+			traits = { war_hero infantry_officer }
+			skill = 4
+			id = 7762
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		create_corps_commander = { #IA
+			name = "Vernon Prichard"
+			picture = "Portrait_USA_Vernon_E_Prichard.dds"
+			traits = { armor_officer }
+			skill = 2
+			id = 7763
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		create_corps_commander = { #Virginia
+			name = "Wade Haislip"
+			picture = "Portrait_USA_Wade_Haislip.dds"
+			traits = { infantry_officer }
+			skill = 2
+			id = 7764
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		create_corps_commander = { #IL
+			name = "Walter Short"
+			picture = "Portrait_USA_Walter_Short.dds"
+			traits = { old_guard }
+			skill = 1
+			id = 7765
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		create_corps_commander = { #ME
+			name = "Willard Wyman"
+			picture = "Portrait_USA_Willard_Wyman.dds"
+			traits = { infantry_officer }
+			skill = 1
+			id = 7766
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = { #Missouri
+			name = "William Hoge"
+			picture = "Portrait_USA_William_Morris_Hoge.dds"
+			traits = { war_hero trait_engineer }
+			skill = 3
+			id = 7767
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		create_corps_commander = { #DC
+			name = "William Rupertus"
+			picture = "Portrait_USA_William_H_Rupertus.dds"
+			traits = {  }
+			skill = 2
+			id = 7768
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		create_corps_commander = { #MD
+			name = "Willis Crittenberger"
+			picture = "Portrait_USA_Willis_Crittenberger.dds"
+			traits = { trickster }
+			skill = 2
+			id = 7769
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+    #     ###   ###
+   ##    #   #  #   #
+  #  #   #   #  #   #
+ # # #  #   #  #   #
+#      # ##     ##
+
+create_corps_commander = { #either way CA
+	name = "George S. Patton"
+	picture = "Portrait_USA_George_S_Patton.dds"
+	traits = {  trickster armor_officer panzer_leader war_hero trait_reckless }
+	skill = 5
+	id = 7770
+	attack_skill = 7 
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 4
+}
+
+create_corps_commander = { #NY
+	name = "Omar Bradley"
+	picture = "Portrait_USA_Omar_Bradley.dds"
+	traits = {  trait_engineer trait_cautious brilliant_strategist harsh_leader }
+	skill = 5
+	id = 7771
+	attack_skill = 3
+	defense_skill = 5
+	planning_skill = 4
+	logistics_skill = 4
+}
+
+create_field_marshal = { #KS 
+	name = "Dwight D. Eisenhower"
+	picture = "Portrait_USA_Dwight_D_Eisenhower.dds"
+	traits = { logistics_wizard organizer offensive_doctrine trait_cautious armor_officer politically_connected }
+	skill = 5
+	id = 602
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 5
+}
+
+create_corps_commander = { #NM
+	name = "Geoffrey Keyes"
+	picture = "Portrait_USA_Geoffrey_Keyes.dds"
+	traits = { armor_officer career_officer }
+	skill = 2
+	id = 7772
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = { #OK
+	name = "Lucian Truscott"
+	picture = "Portrait_USA_Lucian_Truscott.dds"
+	traits = { trait_engineer commando cavalry_officer }
+	skill = 3
+	id = 7773
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = { #IL
+	name = "Mark Clark"
+	picture = "Portrait_USA_Mark_W_Clark.dds"
+	traits = { infantry_officer trait_reckless }
+	skill = 3
+	id = 7774
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_field_marshal = { #AR
+	name = "Douglas MacArthur"
+	id = 57
+	picture = "Portrait_USA_Douglas_MacArthur.dds"
+	traits = {  offensive_doctrine brilliant_strategist career_officer media_personality politically_connected }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = { #Prussia
+	name = "Walter Krueger"
+	picture = "Portrait_USA_Walter_Krueger.dds"
+	traits = { armor_officer career_officer brilliant_strategist }
+	skill = 3
+	id = 7775
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = { #WY
+	name = "Lloyd Fredendall"
+	picture = "Portrait_USA_Lloyd_Fredendall.dds"
+	traits = { old_guard infantry_officer inflexible_strategist }
+	skill = 2
+	id = 7776
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = { #Minnesota
+	name = "Leslie McNair"
+	picture = "Portrait_USA_Lesley_McNair.dds"
+	traits = {  old_guard career_officer armor_officer }
+	skill = 3
+	id = 7777
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+}
+
+create_corps_commander = { #WA
+	name = "Jonathan Wainwright"
+	picture = "Portrait_USA_Jonathan_Wainwright.dds"
+	traits = {  }
+	skill = 1
+	id = 7778
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = { #MD
+	name = "Russell Hartle"
+	picture = "Portrait_USA_Russell_P_Hartle.dds"
+	traits = { infantry_officer }
+	skill = 1
+	id = 7779
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = { #Virginia
+	name = "Leonard Gerow"
+	picture = "Portrait_USA_Leonard_T_Gerow.dds"
+	traits = { infantry_officer }
+	skill = 3
+	id = 7780
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = { #NH
+	name = "Edward Brooks"
+	picture = "Portrait_USA_Edward_Brooks.dds"
+	traits = { armor_officer trait_reckless }
+	skill = 2
+	id = 7781
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = { #KS
+	name = "Clarence Huebner"
+	picture = "Portrait_USA_Clarence_Huebner.dds"
+	traits = { old_guard harsh_leader }
+	skill = 2
+	id = 7782
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = { #AZ
+	name = "Alexander Patch"
+	picture = "Portrait_USA_Alexander_Patch.dds"
+	traits = {  commando infantry_officer }
+	skill = 3
+	id = 7783
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = { #Texas
+	name = "William Simpson"
+	picture = "Portrait_USA_William_Hood_Simpson.dds"
+	traits = { infantry_officer }
+	skill = 3
+	id = 7784
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "J. Lawton Collins"
+	picture = "Portrait_USA_Lawton_Collins.dds"
+	traits = {  trickster career_officer }
+	skill = 3
+	id = 7785
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = { #GA
+	name = "Courtney Hodges"
+	picture = "Portrait_USA_Cortney_Hodges.dds"
+	traits = {  panzer_leader career_officer infantry_officer }
+	skill = 4
+	id = 7786
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 4
+}
+
+create_corps_commander = { #FL
+	name = "Joseph Stilwell"
+	picture = "Portrait_USA_Joseph_Stilwell.dds"
+	traits = { politically_connected infantry_officer career_officer harsh_leader }
+	skill = 1 
+	id = 601
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = { #NV
+	name = "Oscar Griswold"
+	picture = "Portrait_USA_Oscar_Griswold.dds"
+	traits = { infantry_officer  }
+	skill = 2
+	id = 7787
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = { #CT
+	name = "Maurice Rose"
+	picture = "Portrait_USA_Maurice_Rose.dds"
+	traits = { armor_officer trait_reckless brilliant_strategist  }
+	skill = 3
+	id = 7788
+	attack_skill = 4
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_navy_leader = { #OH
+	name = "Ernest King"
+		picture = "Portrait_USA_Earnest_King.dds"
+	traits = { navy_career_officer aviation_enthusiast caustic_personality blockade_runner superior_tactician }
+	skill = 5
+	id = 7789
+	attack_skill = 4
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 6
+}
+
+create_navy_leader = { #Texas 
+	name = "Chester W. Nimitz"
+		picture = "Portrait_USA_Chester_W_Nimitz.dds"
+	traits = { gentlemanly blue_water_expert naval_lineage superior_tactician spotter }
+	skill = 5
+	id = 7790
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 5
+	coordination_skill = 5
+}
+
+create_navy_leader = { #NJ
+	name = "William Halsey, Jr."
+		picture = "Portrait_USA_William_Halsey_Jr.dds"
+	traits = { bold aviation_enthusiast superior_tactician spotter }
+	skill = 4
+	id = 7791
+	attack_skill = 5
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 2
+}
+
+create_navy_leader = { #IA
+	name = "Frank Jack Fletcher"
+		picture = "Portrait_USA_Frank_Jack_Fletcher.dds"
+	traits = { gunnery_expert spotter }
+	skill = 3
+	id = 7792
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 3
+	coordination_skill = 1
+}
+
+create_navy_leader = { #MD
+	name = "Raymond A. Spruance"
+		picture = "Portrait_USA_Raymond_A_Spruance.dds"
+	traits = { navy_career_officer gentlemanly superior_tactician }
+	skill = 4
+	id = 7793
+	attack_skill = 4
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 3
+}
+
+create_navy_leader = { #PA
+	name = "Harold Rainsford Stark"
+		picture = "Portrait_USA_Harold_Rainsford_Stark.dds"
+	traits = { cuts_corners blockade_runner spotter }
+	skill = 2
+	id = 7794
+	attack_skill = 2
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = { #CO
+	name = "Arleigh Burke"
+		picture = "Portrait_USA_Arleigh_Burke.dds"
+	traits = { bold fleet_protector old_guard_navy superior_tactician }
+	skill = 4
+	id = 7795
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 4
+}
+
+create_navy_leader = { #AR
+	name = "Charles M. Cooke, Jr."
+		picture = "Portrait_USA_Charles_M_Cooke.dds"
+	traits = { career_officer }
+	skill = 2
+	id = 7796
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 3
+}
+create_corps_commander = { #Penn
+	name = "George Grunert"
+	picture = "Portrait_USA_George_Grunert.dds"
+	traits = { war_hero }
+	skill = 3
+	id = 7797
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = { #Puerto Rico / Maryland
+	name = "Pedro del Valle"
+	picture = "Portrait_USA_Pedro_del_Valle.dds"
+	traits = { bearer_of_artillery infantry_officer }
+	skill = 3
+	id = 7798
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = { #Iowa
+	name = "Thomas Watson"
+	picture = "Portrait_USA_Thomas_E_Watson.dds"
+	traits = { organizer infantry_officer }
+	skill = 3
+	id = 7799
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Barracuda Class"
+		type = submarine_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 1
+			sub_torpedo_upgrade = 1
+		}
+		obsolete = yes
+	}
+
+	create_equipment_variant = {
+		name = "Farragut Class"
+		type = destroyer_1
+		upgrades = {
+			ship_torpedo_upgrade = 3
+			destroyer_engine_upgrade = 3
+			ship_ASW_upgrade = 3
+			ship_anti_air_upgrade = 3
+		}
+	}
+
+	create_equipment_variant = {
+		name = "Portland Class"
+		type = heavy_cruiser_1
+		upgrades = {
+			ship_reliability_upgrade = 2
+			ship_engine_upgrade = 2
+			ship_armor_upgrade = 2
+			ship_gun_upgrade = 2
+		}
+	}
+
+	create_equipment_variant = {
+		name = "Pennsylvania Class"
+		type = battleship_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 1
+			ship_armor_upgrade = 1
+			ship_gun_upgrade = 1
+		}
+		obsolete = yes
+	}
+
+	create_equipment_variant = {
+		name = "New Mexico Class"
+		type = battleship_1
+		upgrades = {
+			ship_reliability_upgrade = 2
+			ship_engine_upgrade = 2
+			ship_armor_upgrade = 2
+			ship_gun_upgrade = 2
+		}
+	}
+
+	create_equipment_variant = {
+		name = "Colorado Class"
+		type = battleship_1
+		upgrades = {
+			ship_reliability_upgrade = 3
+			ship_engine_upgrade = 3
+			ship_armor_upgrade = 3
+			ship_gun_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "Yorktown Class"
+		type = carrier_2
+		upgrades = {
+			ship_deckspace_upgrade = 1
+			carrier_armor_upgrade = 1
+			ship_engine_upgrade = 1
+			ship_reliability_upgrade = 1
+		}
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {			# represents O/R class, S class
+		name = "S Class"
+		type = ship_hull_submarine_1
+		name_group = USA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Barracuda Class"			# represents Barracuda, Dolphin, Cachalot classes
+		type = ship_hull_submarine_2
+		name_group = USA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Porpoise Class"				# represents Porpoise, Shark, and Perch classes
+		type = ship_hull_submarine_2
+		name_group = USA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = empty
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Clemson Class"				# represents Sampson, Caldwell, Clemson, and Wickes classes
+		type = ship_hull_light_1
+		name_group = USA_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Farragut Class"				# represents Farragut, Porter, Mahan classes
+		type = ship_hull_light_1
+		name_group = USA_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = ship_sonar_1
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Omaha Class"
+		type = ship_hull_cruiser_1
+		name_group = USA_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_light_medium_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Brooklyn Class"
+		type = ship_hull_cruiser_2
+		name_group = USA_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_3
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			front_1_custom_slot = ship_light_medium_battery_2
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_anti_air_1
+			rear_1_custom_slot = ship_light_medium_battery_2
+		}
+	}
+	create_equipment_variant = {
+		name = "Oglala Class"				#cruiser minelayers
+		type = ship_hull_cruiser_1
+		name_group = USA_MINELAYERS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Pensacola Class"			# Pensacola and Northampton classes
+		type = ship_hull_cruiser_1
+		name_group = USA_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_medium_battery_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Portland Class"				# Portland and New Orleans classes
+		type = ship_hull_cruiser_2
+		name_group = USA_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_medium_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "New Orleans Class"
+		type = ship_hull_cruiser_2
+		name_group = USA_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_anti_air_1
+			rear_1_custom_slot = ship_medium_battery_2
+		}
+	}
+	# Battleships #
+	create_equipment_variant = {
+		name = "New York Class"					# represents Wyoming (Arkansas) and New York classes
+		type = ship_hull_heavy_1
+		name_group = USA_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Pennsylvania Class"				# represents Pennsylvania, Nevada, Tennessee, and New Mexico classes
+		type = ship_hull_heavy_1
+		name_group = USA_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_2
+			front_1_custom_slot = ship_anti_air_1
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Colorado Class"				
+		type = ship_hull_heavy_1
+		name_group = USA_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_2
+			front_1_custom_slot = ship_anti_air_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_airplane_launcher_1
+			rear_1_custom_slot = ship_heavy_battery_2
+		}
+	}
+	# Carriers #
+	create_equipment_variant = {
+		name = "Lexington Class"
+		type = ship_hull_carrier_conversion_bb
+		name_group = USA_CV_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = ship_deck_space
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Ranger Class"
+		type = ship_hull_carrier_1
+		name_group = USA_CV_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = carrier_ship_engine_1
+			fixed_ship_secondaries_slot = empty
+			front_1_custom_slot = ship_deck_space
+			
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Yorktown Class"
+		type = ship_hull_carrier_1
+		name_group = USA_CV_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = carrier_ship_engine_2
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			front_1_custom_slot = ship_deck_space
+		}
+	}
+}

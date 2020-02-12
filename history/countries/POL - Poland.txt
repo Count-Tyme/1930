@@ -1,0 +1,383 @@
+﻿capital = 10
+oob = "POL_1930"
+set_stability = 0.20
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "POL_1930_naval_mtg"
+	else = {
+		set_naval_oob = "POL_1930_naval_legacy"
+	}
+}
+add_ideas = {
+idea_depression_paralysis	
+great_depression
+}
+set_research_slots = 2
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	sliderule = 1
+}
+1932.11.7 = {
+	add_political_power = 200
+	complete_national_focus = POL_infrastructure1
+	complete_national_focus = POL_infrastructure2
+	complete_national_focus = POL_pre_research_slot
+	complete_national_focus = POL_kw_expansion
+	complete_national_focus = POL_military_modernization
+	complete_national_focus = POL_army_engineers
+	complete_national_focus = POL_early_plane_models
+	complete_national_focus = POL_polish_nationalism		
+	set_technology = {
+		gwtank = 1
+		primitive_machine_tools = 1
+		trench_warfare = 1
+		tech_support = 1
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_submarine = 1	
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+	}
+}
+
+set_convoys = 10
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.9.8"
+	election_frequency = 36
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 18
+	fascism = 15
+	communism = 2
+	neutrality = 65
+}
+create_country_leader = {
+	name = "Władysław Sikorski"
+	desc = "POLITICS_WLADYSLAW_SIKORSKI_DESC"
+	picture = "Portrait_Poland_Wladyslaw_Sikorski.dds"
+	expire = "1965.1.1"
+	ideology = oligarchism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Jozef Pilsudski"
+	desc = "POLITICS_IGNACY_MOSCICKI_DESC"
+	picture = "Portrait_Poland_Jozef_Pilsudski.dds"
+	expire = "1965.1.1"
+	ideology = oligarchism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Władysław Gomułka"
+	desc = "POLITICS_WLADYSLAW_GOMULKA_DESC"
+	picture = "Portrait_Poland_Wladyslaw_Gomulka.dds"
+	expire = "1965.1.1"
+	ideology = leninism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Wincenty Witos"
+	desc = "POLITICS_WINCENTY_WITOS_DESC"
+	picture = "GFX_POL_wincenty_witos"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Bolesław Piasecki"
+	desc = "POLITICS_BOLESLAW_PIASECKI_DESC"
+	picture = "GFX_POL_boleslaw_piasecki"
+	expire = "1965.1.1"
+	ideology = falangism
+	traits = {
+		#
+	}
+}
+
+###########################################
+create_corps_commander = {
+	name = "Sosnkowski Kazimierz"
+	picture = "Portrait_Poland_Sosnkowski_Kazimierz.dds"
+	traits = { trickster }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Stanislaw Sosabowski"
+	picture = "Portrait_Poland_Stanislaw_Sosabowski.dds"
+	traits = { brilliant_strategist trickster }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 5
+}
+
+create_corps_commander = {
+	name = "Marian Januszajtis"
+	picture = "Portrait_Poland_Marian_Januszajtis_Zegota.dds"
+	traits = { }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Tadeusz Kutrzeba"
+	picture = "Portrait_Poland_Tadeusz_Kutrzeba.dds"
+	traits = { trait_engineer }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "Felicjan Skladkowski"
+	picture = "Portrait_Poland_Felicjan_Skladkowski.dds"
+	traits = { politically_connected }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Stefan Dab-Biernacki"
+	picture = "Portrait_Poland_Stefan_Dab_Biernacki.dds"
+	traits = { trait_reckless harsh_leader }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Franciszek Wlad"
+	picture = "Portrait_Poland_Franciszek_Wlad.dds"
+	traits = { infantry_officer }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Wladyslaw Langner"
+	picture = "Portrait_Poland_Wladyslaw_Langner.dds"
+	traits = { infantry_officer }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+###########################################
+
+
+create_field_marshal = {
+	name = "Władysław Sikorski"
+	picture = "Portrait_Poland_Wladyslaw_Sikorski.dds"
+	traits = { defensive_doctrine }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_field_marshal = {
+	name = "Władysław Bortnowski"
+	gfx = "GFX_POL_wladyslaw_bortnowski"
+	traits = {  thorough_planner }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_field_marshal = {
+	name = "Stanisław Kopański"
+	gfx = "GFX_POL_stanislav_kopanski"
+	traits = {  offensive_doctrine }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Władysław Anders"
+	gfx = "GFX_POL_wladislaw_anders"
+	traits = {  armor_officer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Roman Abraham"
+	gfx = "GFX_POL_roman_abraham"
+	traits = {  }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Wincenty Kowalski"
+	gfx = "GFX_POL_wincenty_kowalski"
+	traits = { trickster }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+#create_equipment_variant = {
+#	name = "PZL P.24"
+#	type = fighter_equipment_0
+#	upgrades = {
+#		plane_gun_upgrade = 3
+#		plane_range_upgrade = 0  
+#		plane_engine_upgrade = 1
+#		plane_reliability_upgrade = 3
+#	}
+#}
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "Wilk Class"				
+		type = ship_hull_submarine_2
+		name_group = POL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Wicher Class"				
+		type = ship_hull_light_1
+		name_group = POL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+}
+
+
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Submarines #
+		create_equipment_variant = {
+			name = "Orzel Class"				
+			type = ship_hull_submarine_2
+			name_group = POL_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = ship_torpedo_sub_2
+			}
+		}
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Grom Class"					
+			type = ship_hull_light_2
+			name_group = POL_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_mine_layer_1
+				rear_1_custom_slot = ship_depth_charge_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Gryf Class"						# minelaying craft
+			type = ship_hull_light_2
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = ship_mine_layer_1
+				rear_1_custom_slot = ship_mine_layer_1
+			}
+		}
+	}
+}

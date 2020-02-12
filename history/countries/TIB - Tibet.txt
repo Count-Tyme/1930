@@ -1,0 +1,47 @@
+﻿capital = 757
+set_stability = 0.40
+set_research_slots = 1
+oob = "TIB_1930"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+1932.11.7 = {
+	add_political_power = 200	
+		#generic focuses
+	complete_national_focus = exp1_army_effort
+	complete_national_focus = exp1_navy_effort
+	complete_national_focus = pre_extra_tech_slot
+	complete_national_focus = pre1_aviation_effort
+	complete_national_focus = pre2_aviation_effort
+	complete_national_focus = pre1_political_effort
+	complete_national_focus = pre1_infrastructure_effort
+	complete_national_focus = pre3_infrastructure_effort
+	set_technology = {
+		gw_artillery = 1
+	}
+}
+add_ideas = {
+idea_depression_paralysis	great_depression
+
+}
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}
+create_country_leader = {
+	name = "Jamphel Yeshe Gyaltsen"
+	desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
+	picture = "Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}

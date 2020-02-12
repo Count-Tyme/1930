@@ -1,0 +1,43 @@
+﻿capital = 327
+set_stability = 0.40
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+set_research_slots = 1
+set_convoys = 5
+add_ideas = {
+idea_depression_paralysis	great_depression
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.9.15"
+	election_frequency = 72
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 82
+	fascism = 9
+	communism = 9
+}
+create_country_leader = {
+	name = "Manuel Luis Quezón"
+	desc = "POLITICS_MANUEL_LUIS_QUEZON_DESC"
+	picture = "gfx/leaders/PHI/Portrait_Philippines_Manuel_Luis_Quezon.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Pedro P. Baguisa"
+	desc = "POLITICS_PEDRO_BAGUISA_DESC"
+	picture = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
